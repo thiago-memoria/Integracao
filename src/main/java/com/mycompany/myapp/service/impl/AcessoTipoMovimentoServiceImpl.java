@@ -1,10 +1,13 @@
 package com.mycompany.myapp.service.impl;
 
-import com.mycompany.myapp.domain.AcessoTipoMovimento;
-import com.mycompany.myapp.repository.AcessoTipoMovimentoRepository;
-import com.mycompany.myapp.service.AcessoTipoMovimentoService;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.AcessoTipoMovimento;
+import com.mycompany.myapp.domain.AcessoTipoMovimentoId;
+import com.mycompany.myapp.repository.AcessoTipoMovimentoRepository;
+import com.mycompany.myapp.service.AcessoTipoMovimentoService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -74,13 +77,13 @@ public class AcessoTipoMovimentoServiceImpl implements AcessoTipoMovimentoServic
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<AcessoTipoMovimento> findOne(Long id) {
+    public Optional<AcessoTipoMovimento> findOne(AcessoTipoMovimentoId id) {
         log.debug("Request to get AcessoTipoMovimento : {}", id);
         return acessoTipoMovimentoRepository.findById(id);
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(AcessoTipoMovimentoId id) {
         log.debug("Request to delete AcessoTipoMovimento : {}", id);
         acessoTipoMovimentoRepository.deleteById(id);
     }

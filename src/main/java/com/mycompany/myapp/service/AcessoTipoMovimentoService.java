@@ -1,8 +1,10 @@
 package com.mycompany.myapp.service;
 
-import com.mycompany.myapp.domain.AcessoTipoMovimento;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.AcessoTipoMovimento;
+import com.mycompany.myapp.domain.AcessoTipoMovimentoId;
 
 /**
  * Service Interface for managing {@link AcessoTipoMovimento}.
@@ -45,12 +47,12 @@ public interface AcessoTipoMovimentoService {
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<AcessoTipoMovimento> findOne(Long id);
+    Optional<AcessoTipoMovimento> findOne(AcessoTipoMovimentoId id);
 
     /**
      * Delete the "id" acessoTipoMovimento.
      *
      * @param id the id of the entity.
      */
-    void delete(Long id);
+    void delete(AcessoTipoMovimentoId id);
 }
