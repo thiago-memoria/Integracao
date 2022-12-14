@@ -29,6 +29,9 @@ public class Contadores implements Serializable {
     @Column(name = "ctb_crc")
     private String ctb_crc;
 
+    @Column(name = "ctb_cgc")
+    private String ctb_cgc;
+
     @Column(name = "ctb_end")
     private String ctb_end;
 
@@ -56,11 +59,11 @@ public class Contadores implements Serializable {
     @Column(name = "ctb_ema")
     private String ctb_ema;
 
-    @Column(name = "ctb_cgc")
-    private String ctb_cgc;
-
     @Column(name = "cad_dat")
     private LocalDate cad_dat;
+
+    @Column(name = "ctb_cep")
+    private String ctb_cep;
 
     @ManyToOne
     private FuncionariosEmpresa funcionariosEmpresa;
@@ -117,6 +120,19 @@ public class Contadores implements Serializable {
 
     public void setCtb_crc(String ctb_crc) {
         this.ctb_crc = ctb_crc;
+    }
+
+    public String getCtb_cgc() {
+        return this.ctb_cgc;
+    }
+
+    public Contadores ctb_cgc(String ctb_cgc) {
+        this.setCtb_cgc(ctb_cgc);
+        return this;
+    }
+
+    public void setCtb_cgc(String ctb_cgc) {
+        this.ctb_cgc = ctb_cgc;
     }
 
     public String getCtb_end() {
@@ -236,19 +252,6 @@ public class Contadores implements Serializable {
         this.ctb_ema = ctb_ema;
     }
 
-    public String getCtb_cgc() {
-        return this.ctb_cgc;
-    }
-
-    public Contadores ctb_cgc(String ctb_cgc) {
-        this.setCtb_cgc(ctb_cgc);
-        return this;
-    }
-
-    public void setCtb_cgc(String ctb_cgc) {
-        this.ctb_cgc = ctb_cgc;
-    }
-
     public LocalDate getCad_dat() {
         return this.cad_dat;
     }
@@ -260,6 +263,19 @@ public class Contadores implements Serializable {
 
     public void setCad_dat(LocalDate cad_dat) {
         this.cad_dat = cad_dat;
+    }
+
+    public String getCtb_cep() {
+        return this.ctb_cep;
+    }
+
+    public Contadores ctb_cep(String ctb_cep) {
+        this.setCtb_cep(ctb_cep);
+        return this;
+    }
+
+    public void setCtb_cep(String ctb_cep) {
+        this.ctb_cep = ctb_cep;
     }
 
     public FuncionariosEmpresa getFuncionariosEmpresa() {
@@ -302,6 +318,7 @@ public class Contadores implements Serializable {
             ", ctb_nom='" + getCtb_nom() + "'" +
             ", ctb_cpf='" + getCtb_cpf() + "'" +
             ", ctb_crc='" + getCtb_crc() + "'" +
+            ", ctb_cgc='" + getCtb_cgc() + "'" +
             ", ctb_end='" + getCtb_end() + "'" +
             ", ctb_num='" + getCtb_num() + "'" +
             ", ctb_cpl='" + getCtb_cpl() + "'" +
@@ -311,8 +328,8 @@ public class Contadores implements Serializable {
             ", ctb_tel='" + getCtb_tel() + "'" +
             ", ctb_fax='" + getCtb_fax() + "'" +
             ", ctb_ema='" + getCtb_ema() + "'" +
-            ", ctb_cgc='" + getCtb_cgc() + "'" +
             ", cad_dat='" + getCad_dat() + "'" +
+            ", ctb_cep='" + getCtb_cep() + "'" +
             "}";
     }
 }

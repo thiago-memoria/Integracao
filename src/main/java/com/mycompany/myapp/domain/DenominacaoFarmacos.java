@@ -1,6 +1,7 @@
 package com.mycompany.myapp.domain;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.*;
 
 /**
@@ -19,6 +20,15 @@ public class DenominacaoFarmacos implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "dcb_nom")
+    private String dcb_nom;
+
+    @Column(name = "cad_dat")
+    private LocalDate cad_dat;
+
+    @ManyToOne
+    private FuncionariosEmpresa funcionariosEmpresa;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -32,6 +42,45 @@ public class DenominacaoFarmacos implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDcb_nom() {
+        return this.dcb_nom;
+    }
+
+    public DenominacaoFarmacos dcb_nom(String dcb_nom) {
+        this.setDcb_nom(dcb_nom);
+        return this;
+    }
+
+    public void setDcb_nom(String dcb_nom) {
+        this.dcb_nom = dcb_nom;
+    }
+
+    public LocalDate getCad_dat() {
+        return this.cad_dat;
+    }
+
+    public DenominacaoFarmacos cad_dat(LocalDate cad_dat) {
+        this.setCad_dat(cad_dat);
+        return this;
+    }
+
+    public void setCad_dat(LocalDate cad_dat) {
+        this.cad_dat = cad_dat;
+    }
+
+    public FuncionariosEmpresa getFuncionariosEmpresa() {
+        return this.funcionariosEmpresa;
+    }
+
+    public void setFuncionariosEmpresa(FuncionariosEmpresa funcionariosEmpresa) {
+        this.funcionariosEmpresa = funcionariosEmpresa;
+    }
+
+    public DenominacaoFarmacos funcionariosEmpresa(FuncionariosEmpresa funcionariosEmpresa) {
+        this.setFuncionariosEmpresa(funcionariosEmpresa);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -58,6 +107,8 @@ public class DenominacaoFarmacos implements Serializable {
     public String toString() {
         return "DenominacaoFarmacos{" +
             "id=" + getId() +
+            ", dcb_nom='" + getDcb_nom() + "'" +
+            ", cad_dat='" + getCad_dat() + "'" +
             "}";
     }
 }
