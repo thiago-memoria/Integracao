@@ -1,6 +1,7 @@
 package com.mycompany.myapp.domain;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.*;
 
 /**
@@ -19,6 +20,15 @@ public class AcompanhamentoClinico implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "cli_dat")
+    private LocalDate cli_dat;
+
+    @Column(name = "cli_pra")
+    private String cli_pra;
+
+    @Column(name = "cli_txg")
+    private String cli_txg;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -32,6 +42,45 @@ public class AcompanhamentoClinico implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public LocalDate getCli_dat() {
+        return this.cli_dat;
+    }
+
+    public AcompanhamentoClinico cli_dat(LocalDate cli_dat) {
+        this.setCli_dat(cli_dat);
+        return this;
+    }
+
+    public void setCli_dat(LocalDate cli_dat) {
+        this.cli_dat = cli_dat;
+    }
+
+    public String getCli_pra() {
+        return this.cli_pra;
+    }
+
+    public AcompanhamentoClinico cli_pra(String cli_pra) {
+        this.setCli_pra(cli_pra);
+        return this;
+    }
+
+    public void setCli_pra(String cli_pra) {
+        this.cli_pra = cli_pra;
+    }
+
+    public String getCli_txg() {
+        return this.cli_txg;
+    }
+
+    public AcompanhamentoClinico cli_txg(String cli_txg) {
+        this.setCli_txg(cli_txg);
+        return this;
+    }
+
+    public void setCli_txg(String cli_txg) {
+        this.cli_txg = cli_txg;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -58,6 +107,9 @@ public class AcompanhamentoClinico implements Serializable {
     public String toString() {
         return "AcompanhamentoClinico{" +
             "id=" + getId() +
+            ", cli_dat='" + getCli_dat() + "'" +
+            ", cli_pra='" + getCli_pra() + "'" +
+            ", cli_txg='" + getCli_txg() + "'" +
             "}";
     }
 }
