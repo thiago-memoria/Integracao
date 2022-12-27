@@ -1,8 +1,10 @@
 package com.mycompany.myapp.service;
 
-import com.mycompany.myapp.domain.InformacoesInventario;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.InformacoesInventario;
+import com.mycompany.myapp.domain.InformacoesInventarioId;
 
 /**
  * Service Interface for managing {@link InformacoesInventario}.
@@ -45,12 +47,12 @@ public interface InformacoesInventarioService {
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<InformacoesInventario> findOne(Long id);
+    Optional<InformacoesInventario> findOne(InformacoesInventarioId id);
 
     /**
      * Delete the "id" informacoesInventario.
      *
      * @param id the id of the entity.
      */
-    void delete(Long id);
+    void delete(InformacoesInventarioId id);
 }

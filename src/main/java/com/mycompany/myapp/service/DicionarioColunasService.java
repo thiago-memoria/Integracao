@@ -1,8 +1,10 @@
 package com.mycompany.myapp.service;
 
-import com.mycompany.myapp.domain.DicionarioColunas;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.DicionarioColunas;
+import com.mycompany.myapp.domain.DicionarioColunasId;
 
 /**
  * Service Interface for managing {@link DicionarioColunas}.
@@ -45,12 +47,12 @@ public interface DicionarioColunasService {
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<DicionarioColunas> findOne(Long id);
+    Optional<DicionarioColunas> findOne(DicionarioColunasId id);
 
     /**
      * Delete the "id" dicionarioColunas.
      *
      * @param id the id of the entity.
      */
-    void delete(Long id);
+    void delete(DicionarioColunasId id);
 }

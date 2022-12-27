@@ -1,10 +1,13 @@
 package com.mycompany.myapp.service.impl;
 
-import com.mycompany.myapp.domain.DicionarioColunas;
-import com.mycompany.myapp.repository.DicionarioColunasRepository;
-import com.mycompany.myapp.service.DicionarioColunasService;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.DicionarioColunas;
+import com.mycompany.myapp.domain.DicionarioColunasId;
+import com.mycompany.myapp.repository.DicionarioColunasRepository;
+import com.mycompany.myapp.service.DicionarioColunasService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -113,13 +116,13 @@ public class DicionarioColunasServiceImpl implements DicionarioColunasService {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<DicionarioColunas> findOne(Long id) {
+    public Optional<DicionarioColunas> findOne(DicionarioColunasId id) {
         log.debug("Request to get DicionarioColunas : {}", id);
         return dicionarioColunasRepository.findById(id);
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(DicionarioColunasId id) {
         log.debug("Request to delete DicionarioColunas : {}", id);
         dicionarioColunasRepository.deleteById(id);
     }

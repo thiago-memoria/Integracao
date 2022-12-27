@@ -1,10 +1,13 @@
 package com.mycompany.myapp.service.impl;
 
-import com.mycompany.myapp.domain.InformacoesInventario;
-import com.mycompany.myapp.repository.InformacoesInventarioRepository;
-import com.mycompany.myapp.service.InformacoesInventarioService;
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.InformacoesInventario;
+import com.mycompany.myapp.domain.InformacoesInventarioId;
+import com.mycompany.myapp.repository.InformacoesInventarioRepository;
+import com.mycompany.myapp.service.InformacoesInventarioService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -83,13 +86,13 @@ public class InformacoesInventarioServiceImpl implements InformacoesInventarioSe
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<InformacoesInventario> findOne(Long id) {
+    public Optional<InformacoesInventario> findOne(InformacoesInventarioId id) {
         log.debug("Request to get InformacoesInventario : {}", id);
         return informacoesInventarioRepository.findById(id);
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(InformacoesInventarioId id) {
         log.debug("Request to delete InformacoesInventario : {}", id);
         informacoesInventarioRepository.deleteById(id);
     }

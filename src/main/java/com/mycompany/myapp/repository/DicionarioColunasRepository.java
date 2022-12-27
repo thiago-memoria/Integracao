@@ -1,12 +1,14 @@
 package com.mycompany.myapp.repository;
 
 import com.mycompany.myapp.domain.DicionarioColunas;
-import org.springframework.data.jpa.repository.*;
+import com.mycompany.myapp.domain.DicionarioColunasId;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  * Spring Data JPA repository for the DicionarioColunas entity.
  */
-@SuppressWarnings("unused")
 @Repository
-public interface DicionarioColunasRepository extends JpaRepository<DicionarioColunas, Long> {}
+public interface DicionarioColunasRepository extends JpaRepository<DicionarioColunas, DicionarioColunasId> {
+}

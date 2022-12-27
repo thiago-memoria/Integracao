@@ -19,6 +19,12 @@ public class Chaves implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "cha_nom")
+    private String cha_nom;
+
+    @Column(name = "cha_abr")
+    private String cha_abr;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -32,6 +38,32 @@ public class Chaves implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCha_nom() {
+        return this.cha_nom;
+    }
+
+    public Chaves cha_nom(String cha_nom) {
+        this.setCha_nom(cha_nom);
+        return this;
+    }
+
+    public void setCha_nom(String cha_nom) {
+        this.cha_nom = cha_nom;
+    }
+
+    public String getCha_abr() {
+        return this.cha_abr;
+    }
+
+    public Chaves cha_abr(String cha_abr) {
+        this.setCha_abr(cha_abr);
+        return this;
+    }
+
+    public void setCha_abr(String cha_abr) {
+        this.cha_abr = cha_abr;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -58,6 +90,8 @@ public class Chaves implements Serializable {
     public String toString() {
         return "Chaves{" +
             "id=" + getId() +
+            ", cha_nom='" + getCha_nom() + "'" +
+            ", cha_abr='" + getCha_abr() + "'" +
             "}";
     }
 }
